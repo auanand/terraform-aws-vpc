@@ -19,21 +19,18 @@ Example usage:
 
 ```hcl
 module "vpc" {
-  source = "github.com/azavea/terraform-aws-vpc"
+  source = "github.com/auanand/terraform-aws-vpc.git"
 
-  name = "Default"
+  name = "webapp-dev"
   region = "us-east-1"
   key_name = "hector"
   cidr_block = "10.0.0.0/16"
   private_subnet_cidr_blocks = ["10.0.1.0/24", "10.0.3.0/24"]
   public_subnet_cidr_blocks = ["10.0.0.0/24", "10.0.2.0/24"]
   availability_zones = ["us-east-1a", "us-east-1b"]
-  bastion_ami = "ami-6869aa05"
-  bastion_ebs_optimized = true
-  bastion_instance_type = "t3.micro"
 
-  project = "Something"
-  environment = "Staging"
+  project = "webapp"
+  environment = "dev"
 }
 ```
 
